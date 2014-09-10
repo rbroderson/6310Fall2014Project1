@@ -92,12 +92,17 @@ public class Computation {
 			}
 			
 			//copy from newPlate to oldPlate
-			for(int i = 1; i<=d; i++){
-				for(int j = 1; j<=d; j++){
-					oldPlate[i][j] = newPlate[i][j];
-				}
+			//improved performance for copy operation
+			int length = newPlate.length;
+			for (int i = 0; i < length; i++) {
+				System.arraycopy(newPlate[i], 0, oldPlate[i], 0, newPlate[i].length);
 			}
-			//System.arraycopy(newPlate, 0, oldPlate, 0, oldPlate.length);
+			
+			//for(int i = 1; i<=d; i++){
+			//	for(int j = 1; j<=d; j++){
+			//		oldPlate[i][j] = newPlate[i][j];
+			//	}
+			//}
 			
 			done++;
 			if(equalibriumFlag == (d*d) ){
