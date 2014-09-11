@@ -1,6 +1,6 @@
 package Tpdahp;
 
-public class Computation implements ComputationInterface {
+class Computation implements ComputationInterface {
 	
 	private int d, top, bot, left, right;
 	
