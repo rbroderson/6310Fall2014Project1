@@ -1,28 +1,15 @@
 package Tpdahp;
 
-public class Computation {
+public class Computation implements ComputationInterface {
 	
-	int d, top, bot, left, right;
-	double[][] oldPlate, newPlate;
+	private int d, top, bot, left, right;
 	
-	public Computation(int d, int top, int bot, int left, int right,
-			double[][] oldPlate, double[][] newPlate) {
+	public Computation() {
 		super();
-		this.d = d;
-		this.top = top;
-		this.bot = bot;
-		this.left = left;
-		this.right = right;
-		this.oldPlate = oldPlate;
-		this.newPlate = newPlate;
 	}
 	
 	public int getD() {
 		return d;
-	}
-
-	public Computation() {
-		super();
 	}
 
 	public void setD(int d) {
@@ -60,7 +47,7 @@ public class Computation {
 		this.right = right;
 	}
 
-	double[][] initialize(double[][] plate){
+	public double[][] initialize(double[][] plate){
 		
 		for(int i = 1; i<=d; i++){
 			//initializing edges to corresponding values
@@ -77,7 +64,7 @@ public class Computation {
 		return plate;
 	}
 	
-	void compute(double[][] oldPlate, double[][] newPlate){
+	public void compute(double[][] oldPlate, double[][] newPlate){
 		int done = 0;
 		int equalibriumFlag = 0;
 		while(done!=(d*20)){
@@ -112,7 +99,7 @@ public class Computation {
 		}
 	}
 	
-	void display(double[][] newPlate){
+	public void display(double[][] newPlate){
 		System.out.println("Results for "+d+" x "+d+" plate are: ");
 		for(int i = 1; i<=d; i++){
 			for(int j = 1; j<=d; j++){

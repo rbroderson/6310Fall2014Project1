@@ -30,7 +30,7 @@ public class Demo {
                     System.err.println("ERROR: Could not parse " + arg + "!");
                     System.exit(1);
                 } catch (IllegalArgumentException ex) {
-                    System.err.println("ERROR: Min word length must be non-negative");
+                    System.err.println("ERROR: Temperature must be in the range 0-100.0");
                     System.exit(1);
                 }
                 inL = false;
@@ -42,7 +42,7 @@ public class Demo {
                     System.err.println("ERROR: Could not parse " + arg + "!");
                     System.exit(1);
                 } catch (IllegalArgumentException ex) {
-                    System.err.println("ERROR: Min word length must be non-negative");
+                    System.err.println("ERROR: Temperature must be in the range 0-100.0");
                     System.exit(1);
                 }
                 inR = false;
@@ -54,7 +54,7 @@ public class Demo {
                     System.err.println("ERROR: Could not parse " + arg + "!");
                     System.exit(1);
                 } catch (IllegalArgumentException ex) {
-                    System.err.println("ERROR: Min word length must be non-negative");
+                    System.err.println("ERROR: Temperature must be in the range 0-100.0");
                     System.exit(1);
                 }
                 inB = false;
@@ -66,7 +66,7 @@ public class Demo {
                     System.err.println("ERROR: Could not parse " + arg + "!");
                     System.exit(1);
                 } catch (IllegalArgumentException ex) {
-                    System.err.println("ERROR: Min word length must be non-negative");
+                    System.err.println("ERROR: Temperature must be in the range 0-100.0");
                     System.exit(1);
                 }
                 inT = false;
@@ -90,8 +90,7 @@ public class Demo {
 		
 		double[][] oldPlate = new double[obj.getD()+2][obj.getD()+2];
 		double[][] newPlate = new double[obj.getD()+2][obj.getD()+2];
-		//Computation obj = new Computation(d, top, bot, left, right, oldPlate, newPlate );
-		
+
 		//Initialize oldPlate and newPlate
 		oldPlate = obj.initialize(oldPlate);
 		newPlate = obj.initialize(newPlate);
