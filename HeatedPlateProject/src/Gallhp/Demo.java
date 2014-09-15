@@ -99,21 +99,24 @@ public class Demo extends JFrame {
 				if(cbPrograms.getSelectedItem().toString().equals("Tpdahp")) {
 
 					if(checkValidInput(TYPE_DOUBLE)) {
-
+						
+						Tpdahp.Demo.main(getArgumentStringArray());
 					}
 
 				}
 				else if(cbPrograms.getSelectedItem().toString().equals("Tpfahp")) {
 
 					if(checkValidInput(TYPE_FLOAT)) {
-
+						
+						Tpfahp.Demo.main(getArgumentStringArray());
 					}
 
 				}
 				else if(cbPrograms.getSelectedItem().toString().equals("Twfahp")) {
 
 					if(checkValidInput(TYPE_FLOAT)) {
-
+						
+						Twfahp.Demo.main(getArgumentStringArray());
 					}
 
 				}
@@ -121,6 +124,7 @@ public class Demo extends JFrame {
 
 					if(checkValidInput(TYPE_DOUBLE)) {
 
+						Tpdohp.Demo.main(getArgumentStringArray());
 					}
 
 				}
@@ -336,6 +340,29 @@ public class Demo extends JFrame {
 		}
 
 		return true;
+	}
+	
+	private String[] getArgumentStringArray() {
+		
+		String dimensions = txtDimensions.getText();
+		String top = txtTop.getText();
+		String bottom = txtBottom.getText();
+		String left = txtLeft.getText();
+		String right = txtRight.getText();
+
+		String[] args = new String[10];
+		args[0] = "-d";
+		args[1] = dimensions;
+		args[2] = "-t";
+		args[3] = top;
+		args[4] = "-b";
+		args[5] = bottom;
+		args[6] = "-l";
+		args[7] = left;
+		args[8] = "-r";
+		args[9] = right;
+		
+		return args;
 	}
 
 	private boolean isValidInt(String intString) {
