@@ -5,7 +5,7 @@ public class Demo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Computation obj = new Computation();
+		Plate obj = new Plate();
 		
 		boolean inD = false, inL = false, inR = false, inT = false, inB = false;
 		boolean flagD = false, flagL = false, flagR = false, flagT = false, flagB = false;
@@ -91,11 +91,11 @@ public class Demo {
 		double[][] newPlate = new double[obj.getD()+2][obj.getD()+2];
 
 		//Initialize oldPlate and newPlate
-		oldPlate = obj.initialize(oldPlate);
-		newPlate = obj.initialize(newPlate);
+		oldPlate = obj.initiate(oldPlate);
+		newPlate = obj.initiate(newPlate);
 		
 		//compute the equilibrium temperature
-		obj.compute(oldPlate, newPlate);
+		obj.simulate(oldPlate, newPlate);
 		
 		//display final temperature of the grid
 		obj.display(newPlate);
