@@ -16,6 +16,9 @@ public class Demo extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
+	private static final int TYPE_FLOAT = 0;
+	private static final int TYPE_DOUBLE = 1;
+
 	// - Combo box to display a list of programs
 	private JComboBox cbPrograms;
 
@@ -60,7 +63,7 @@ public class Demo extends JFrame {
 	}
 
 	private void initUI() {
-		
+
 		// Setup window
 		setupWindow();
 
@@ -93,11 +96,34 @@ public class Demo extends JFrame {
 		btnExecute.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 
-				// TODO - Add error handling for invalid input values
+				if(cbPrograms.getSelectedItem().toString().equals("Tpdahp")) {
 
-				// Show error to user
-				JOptionPane.showMessageDialog(null, "Error");
+					if(checkValidInput(TYPE_DOUBLE)) {
 
+					}
+
+				}
+				else if(cbPrograms.getSelectedItem().toString().equals("Tpfahp")) {
+
+					if(checkValidInput(TYPE_FLOAT)) {
+
+					}
+
+				}
+				else if(cbPrograms.getSelectedItem().toString().equals("Twfahp")) {
+
+					if(checkValidInput(TYPE_FLOAT)) {
+
+					}
+
+				}
+				else if(cbPrograms.getSelectedItem().toString().equals("Tpdohp")) {
+
+					if(checkValidInput(TYPE_DOUBLE)) {
+
+					}
+
+				}
 
 			}
 
@@ -175,6 +201,171 @@ public class Demo extends JFrame {
 		getContentPane().add(txtBottom);
 		getContentPane().add(txtLeft);
 		getContentPane().add(txtRight);
+	}
+
+	private boolean checkValidInput(int type) {
+
+		if(!isValidInt(txtDimensions.getText())) {
+			JOptionPane.showMessageDialog(null, "Dimensions must be a valid integer value");
+			 return false;
+		}
+		else {
+
+			if(Integer.parseInt(txtDimensions.getText()) <= 0) {
+				JOptionPane.showMessageDialog(null, "Dimensions must be greater than 0");
+				return false;
+			}
+		}
+
+		if(type == TYPE_FLOAT) {
+
+			if(!isValidFloat(txtTop.getText())) {
+				JOptionPane.showMessageDialog(null, "Top edge temperature must be a valid float value");
+				return false;
+			}
+			else {
+
+				float top = Float.parseFloat(txtTop.getText());
+
+				if(top < 0 || top > 100) {
+					JOptionPane.showMessageDialog(null, "Top edge temperature must be between 0 and 100 inclusive");
+					return false;
+				}
+			}
+
+			if(!isValidFloat(txtBottom.getText())) {
+				JOptionPane.showMessageDialog(null, "Bottom edge temperature must be a valid float value");
+				return false;
+			}
+			else {
+
+				float bottom = Float.parseFloat(txtBottom.getText());
+
+				if(bottom < 0 || bottom > 100) {
+					JOptionPane.showMessageDialog(null, "Bottom edge temperature must be between 0 and 100 inclusive");
+					return false;
+				}
+			}
+
+			if(!isValidFloat(txtLeft.getText())) {
+				JOptionPane.showMessageDialog(null, "Left edge temperature must be a valid float value");
+				return false;
+			}
+			else {
+
+				float left = Float.parseFloat(txtLeft.getText());
+
+				if(left < 0 || left > 100) {
+					JOptionPane.showMessageDialog(null, "Left edge temperature must be between 0 and 100 inclusive");
+					return false;
+				}
+			}
+
+			if(!isValidFloat(txtRight.getText())) {
+				JOptionPane.showMessageDialog(null, "Right edge temperature must be a valid float value");
+				return false;
+			}
+			else {
+
+				float right = Float.parseFloat(txtRight.getText());
+
+				if(right < 0 || right > 100) {
+					JOptionPane.showMessageDialog(null, "Right edge temperature must be between 0 and 100 inclusive");
+					return false;
+				}
+			}
+
+		}
+		else if(type == TYPE_DOUBLE) {
+
+			if(!isValidDouble(txtTop.getText())) {
+				JOptionPane.showMessageDialog(null, "Top edge temperature must be a valid float value");
+				return false;
+			}
+			else {
+
+				double top = Double.parseDouble(txtTop.getText());
+
+				if(top < 0 || top > 100) {
+					JOptionPane.showMessageDialog(null, "Top edge temperature must be between 0 and 100 inclusive");
+					return false;
+				}
+			}
+
+			if(!isValidDouble(txtBottom.getText())) {
+				JOptionPane.showMessageDialog(null, "Bottom edge temperature must be a valid float value");
+				return false;
+			}
+			else {
+
+				double bottom = Double.parseDouble(txtBottom.getText());
+
+				if(bottom < 0 || bottom > 100) {
+					JOptionPane.showMessageDialog(null, "Bottom edge temperature must be between 0 and 100 inclusive");
+					return false;
+				}
+			}
+
+			if(!isValidDouble(txtLeft.getText())) {
+				JOptionPane.showMessageDialog(null, "Left edge temperature must be a valid float value");
+				return false;
+			}
+			else {
+
+				double left = Double.parseDouble(txtLeft.getText());
+
+				if(left < 0 || left > 100) {
+					JOptionPane.showMessageDialog(null, "Left edge temperature must be between 0 and 100 inclusive");
+					return false;
+				}
+			}
+
+			if(!isValidDouble(txtRight.getText())) {
+				JOptionPane.showMessageDialog(null, "Right edge temperature must be a valid float value");
+				return false;
+			}
+			else {
+
+				double right = Double.parseDouble(txtRight.getText());
+
+				if(right < 0 || right > 100) {
+					JOptionPane.showMessageDialog(null, "Right edge temperature must be between 0 and 100 inclusive");
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
+
+	private boolean isValidInt(String intString) {
+
+		try {
+			Integer.parseInt(intString);
+			return true;
+		} catch (NumberFormatException ex) {
+			return false;
+		}
+	}
+
+	private boolean isValidFloat(String floatString) {
+
+		try {
+			Float.parseFloat(floatString);
+			return true;
+		} catch (NumberFormatException ex) {
+			return false;
+		}
+	}
+
+	private boolean isValidDouble(String doubleString) {
+
+		try {
+			Double.parseDouble(doubleString);
+			return true;
+		} catch (NumberFormatException ex) {
+			return false;
+		}
 	}
 
 }
