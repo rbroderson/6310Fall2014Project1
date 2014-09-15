@@ -160,17 +160,17 @@ public class Demo extends JFrame {
 
 		JLabel lblProgram = new JLabel("Program:");
 		JLabel lblDimensions = new JLabel("Dimensions:");
-		JLabel lblTop = new JLabel("Top:");
-		JLabel lblBottom = new JLabel("Bottom:");
-		JLabel lblLeft = new JLabel("Left:");
-		JLabel lblRight = new JLabel("Right:");
+		JLabel lblTop = new JLabel("Top Edge Temp:");
+		JLabel lblBottom = new JLabel("Bottom Edge Temp:");
+		JLabel lblLeft = new JLabel("Left Edge Temp:");
+		JLabel lblRight = new JLabel("Right Edge Temp:");
 
 		lblProgram.setBounds(10, 50, 90, 16);
 		lblDimensions.setBounds(10, 100, 90, 16);
-		lblTop.setBounds(10, 150, 90, 16);
-		lblBottom.setBounds(10, 200, 90, 16);
-		lblRight.setBounds(10, 250, 90, 16);
-		lblLeft.setBounds(10, 300, 90, 16);
+		lblTop.setBounds(10, 150, 190, 16);
+		lblBottom.setBounds(10, 200, 190, 16);
+		lblRight.setBounds(10, 250, 190, 16);
+		lblLeft.setBounds(10, 300, 190, 16);
 
 		getContentPane().add(lblProgram);
 		getContentPane().add(lblDimensions);
@@ -188,11 +188,11 @@ public class Demo extends JFrame {
 		txtLeft = new JTextField();
 		txtRight = new JTextField();
 
-		txtDimensions.setBounds(110, 100, 50, 25);
-		txtTop.setBounds(110, 150, 50, 25);
-		txtBottom.setBounds(110, 200, 50, 25);
-		txtLeft.setBounds(110, 250, 50, 25);
-		txtRight.setBounds(110, 300, 50, 25);
+		txtDimensions.setBounds(130, 100, 50, 25);
+		txtTop.setBounds(130, 150, 50, 25);
+		txtBottom.setBounds(130, 200, 50, 25);
+		txtLeft.setBounds(130, 250, 50, 25);
+		txtRight.setBounds(130, 300, 50, 25);
 
 		txtDimensions.setText("0");
 		txtTop.setText("0");
